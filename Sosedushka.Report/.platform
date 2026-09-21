@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "Report",
+    "displayName": "Sosedushka"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "7aed8827-ea80-42e7-ad80-068ecd87e9fb"
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "status": "passed",
+  "rows": 81238,
+  "receipts": 22790,
+  "known_customers": 4561,
+  "revenue": 21889600.33,
+  "max_line_rounding_error_rub": 0.005,
+  "dimension_keys_unique": true,
+  "foreign_keys_valid": true,
+  "receipt_store_date_customer_consistent": true,
+  "desktop_checks": [
+    "2025: 11457582.40 revenue, 11771 receipts, 973.37 average, 9.8% YoY",
+    "2024: 10432017.93 revenue, 11019 receipts, 946.73 average, blank YoY",
+    "2025 loyalty: 966.23 with card, 982.22 without card, 55.3% card receipts"
+  ]
+}

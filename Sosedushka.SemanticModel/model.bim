@@ -1,0 +1,677 @@
+{
+  "compatibilityLevel": 1606,
+  "model": {
+    "annotations": [
+      {
+        "name": "__PBI_TimeIntelligenceEnabled",
+        "value": "0"
+      },
+      {
+        "name": "PBI_QueryOrder",
+        "value": "[\"fact_sales\",\"dim_products\",\"dim_stores\",\"dim_customers\",\"dim_suppliers\",\"DataFile\"]"
+      },
+      {
+        "name": "PBI_ProTooling",
+        "value": "[\"DevMode\"]"
+      }
+    ],
+    "culture": "ru-RU",
+    "dataAccessOptions": {
+      "legacyRedirects": true,
+      "returnErrorValuesAsNull": true
+    },
+    "defaultPowerBIDataSourceVersion": "powerBI_V3",
+    "expressions": [
+      {
+        "name": "DataFile",
+        "annotations": [
+          {
+            "name": "PBI_ResultType",
+            "value": "Text"
+          }
+        ],
+        "expression": "\"C:/Users/Admin/Documents/ChatGPT/Gilach inc/simulative-powerbi/data/sosedushka.xlsx\" meta [IsParameterQuery=true, Type=\"Text\", IsParameterQueryRequired=true]",
+        "kind": "m",
+        "lineageTag": "45156889-52e6-4579-9d51-cb7fb196d8b9"
+      }
+    ],
+    "relationships": [
+      {
+        "name": "9ca9b4fa-fb48-4dc3-8ee1-34011686dda7",
+        "fromColumn": "id_товара",
+        "fromTable": "fact_sales",
+        "toColumn": "id_товара",
+        "toTable": "dim_products"
+      },
+      {
+        "name": "268434aa-751d-4117-85e3-dd7006c9ac03",
+        "fromColumn": "id_магазина",
+        "fromTable": "fact_sales",
+        "toColumn": "id_магазина",
+        "toTable": "dim_stores"
+      },
+      {
+        "name": "3fd1905a-dd29-4fbf-bee2-c8c288c0d96f",
+        "fromColumn": "id_клиента",
+        "fromTable": "fact_sales",
+        "toColumn": "id_клиента",
+        "toTable": "dim_customers"
+      },
+      {
+        "name": "857f11fb-db38-4a02-8154-79154f40c885",
+        "fromColumn": "id_поставщика",
+        "fromTable": "dim_products",
+        "toColumn": "id_поставщика",
+        "toTable": "dim_suppliers"
+      },
+      {
+        "name": "d0d4c15b-7dcf-462f-8f95-b4681bd74f78",
+        "fromColumn": "Дата",
+        "fromTable": "fact_sales",
+        "toColumn": "Date",
+        "toTable": "dim_calendar"
+      }
+    ],
+    "sourceQueryCulture": "ru-RU",
+    "tables": [
+      {
+        "name": "fact_sales",
+        "columns": [
+          {
+            "name": "id_чека",
+            "dataType": "int64",
+            "isHidden": true,
+            "lineageTag": "1e7b0245-42d5-4291-8854-2387cfb8e414",
+            "sourceColumn": "id_чека",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "дата_время",
+            "dataType": "dateTime",
+            "formatString": "dd.MM.yyyy",
+            "lineageTag": "23a00b6b-fd85-4cda-8ca5-dde714d010ff",
+            "sourceColumn": "дата_время",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "id_магазина",
+            "dataType": "int64",
+            "isHidden": true,
+            "lineageTag": "4eaf619d-d609-47d6-b9f8-bfca7400a257",
+            "sourceColumn": "id_магазина",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "id_товара",
+            "dataType": "int64",
+            "isHidden": true,
+            "lineageTag": "2cb788ef-3510-4b21-b860-f7ee8aaf99e4",
+            "sourceColumn": "id_товара",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "id_клиента",
+            "dataType": "int64",
+            "isHidden": true,
+            "lineageTag": "c3969ca1-631e-42a5-84a1-67f426c0b6e2",
+            "sourceColumn": "id_клиента",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "количество",
+            "dataType": "int64",
+            "lineageTag": "7f4733fd-d56f-4112-8e48-59d2c61e22fb",
+            "sourceColumn": "количество",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "цена_за_единицу",
+            "dataType": "decimal",
+            "formatString": "#,0.00",
+            "lineageTag": "ef7974bf-c174-49d8-93b3-8b171f551d82",
+            "sourceColumn": "цена_за_единицу",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "скидка_процент",
+            "dataType": "int64",
+            "lineageTag": "5e359de2-2439-4a68-a4cd-c2bfee7dddf0",
+            "sourceColumn": "скидка_процент",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "сумма_строки",
+            "dataType": "decimal",
+            "formatString": "#,0.00",
+            "lineageTag": "298fb532-c1b5-4a5f-88af-c9eb2f31e32c",
+            "sourceColumn": "сумма_строки",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "способ_оплаты",
+            "dataType": "string",
+            "lineageTag": "0e02a3e2-cfdf-4417-870d-381c4a29c674",
+            "sourceColumn": "способ_оплаты",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "Дата",
+            "annotations": [
+              {
+                "name": "UnderlyingDateTimeDataType",
+                "value": "Date"
+              }
+            ],
+            "dataType": "dateTime",
+            "formatString": "dd.MM.yyyy",
+            "lineageTag": "50f32547-e970-4b87-8179-9048c7fbc9ba",
+            "sourceColumn": "Дата",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "Карта лояльности",
+            "dataType": "string",
+            "lineageTag": "3730369d-4d15-463b-88dc-c0e8f0c86dca",
+            "sourceColumn": "Карта лояльности",
+            "summarizeBy": "none"
+          }
+        ],
+        "lineageTag": "673d1ece-b2ad-4801-b218-d07225053c67",
+        "measures": [
+          {
+            "name": "Выручка",
+            "expression": "SUM(fact_sales[сумма_строки])",
+            "formatString": "#,0.00 \"₽\"",
+            "lineageTag": "3073957f-d0ed-4374-8d21-59236ddedb22"
+          },
+          {
+            "name": "Количество чеков",
+            "expression": "DISTINCTCOUNT(fact_sales[id_чека])",
+            "formatString": "#,0",
+            "lineageTag": "b675f96a-32ae-4009-b900-395e8a652297"
+          },
+          {
+            "name": "Средний чек",
+            "expression": "DIVIDE([Выручка], [Количество чеков])",
+            "formatString": "#,0.00 \"₽\"",
+            "lineageTag": "26ec7f28-065b-488f-b188-9e261906fa25"
+          },
+          {
+            "name": "Количество клиентов",
+            "expression": "DISTINCTCOUNTNOBLANK(fact_sales[id_клиента])",
+            "formatString": "#,0",
+            "lineageTag": "5dca1bec-27aa-4aa3-800d-98fbd35bf330"
+          },
+          {
+            "name": "Средний чек по карте",
+            "expression": "CALCULATE([Средний чек], fact_sales[Карта лояльности] = \"С картой\")",
+            "formatString": "#,0.00 \"₽\"",
+            "lineageTag": "6fe76070-29fd-460c-9678-59d6862b2761"
+          },
+          {
+            "name": "Средний чек без карты",
+            "expression": "CALCULATE([Средний чек], fact_sales[Карта лояльности] = \"Без карты\")",
+            "formatString": "#,0.00 \"₽\"",
+            "lineageTag": "10443bd5-da12-4429-8265-709f1e85505d"
+          },
+          {
+            "name": "Разница среднего чека %",
+            "expression": "DIVIDE([Средний чек по карте], [Средний чек без карты]) - 1",
+            "formatString": "0.0%",
+            "lineageTag": "76fb2b8a-62f1-4249-92d0-44465e82a578"
+          },
+          {
+            "name": "Выручка прошлого года",
+            "expression": "CALCULATE([Выручка], SAMEPERIODLASTYEAR(dim_calendar[Date]))",
+            "formatString": "#,0.00 \"₽\"",
+            "lineageTag": "927ea3b0-fb27-45ff-9cab-b174c69d2766"
+          },
+          {
+            "name": "YoY %",
+            "expression": "VAR PY = [Выручка прошлого года] RETURN IF(HASONEVALUE(dim_calendar[Год]) && NOT ISBLANK(PY), DIVIDE([Выручка] - PY, PY))",
+            "formatString": "0.0%",
+            "lineageTag": "45dc0281-063d-4457-8339-3a2a9ae60971"
+          },
+          {
+            "name": "Выручка YTD",
+            "expression": "TOTALYTD([Выручка], dim_calendar[Date])",
+            "formatString": "#,0.00 \"₽\"",
+            "lineageTag": "68f87f45-ad59-491d-9fd6-3e2064abc705"
+          },
+          {
+            "name": "Доля от общего",
+            "expression": "DIVIDE([Выручка], CALCULATE([Выручка], ALLSELECTED(dim_products)))",
+            "formatString": "0.0%",
+            "lineageTag": "b57c1c65-136e-4cb0-a3b5-bb771915cc38"
+          },
+          {
+            "name": "Чеков с картой %",
+            "expression": "DIVIDE(CALCULATE([Количество чеков], fact_sales[Карта лояльности] = \"С картой\"), [Количество чеков])",
+            "formatString": "0.0%",
+            "lineageTag": "ebd086ae-6073-48d5-b2fc-5bf3f7ebd5a3"
+          },
+          {
+            "name": "Выручка в день",
+            "expression": "DIVIDE([Выручка], COUNTROWS(dim_calendar))",
+            "formatString": "#,0.00 \"₽\"",
+            "lineageTag": "206fdcf5-ad53-4617-a086-c0f57819eeff"
+          },
+          {
+            "name": "Рейтинг магазина",
+            "expression": "RANKX(ALLSELECTED(dim_stores[наименование_магазина]), [Выручка], , DESC, DENSE)",
+            "formatString": "0",
+            "lineageTag": "38ad4d36-b0aa-42cb-b549-10e45ddc9f83"
+          }
+        ],
+        "partitions": [
+          {
+            "name": "fact_sales",
+            "mode": "import",
+            "source": {
+              "expression": [
+                "let",
+                "    Source = Excel.Workbook(File.Contents(DataFile), null, true),",
+                "    Sheet = Source{[Item=\"fact_sales\",Kind=\"Sheet\"]}[Data],",
+                "    Headers = Table.PromoteHeaders(Sheet, [PromoteAllScalars=true]),",
+                "    Types = Table.TransformColumnTypes(Headers, {{\"id_чека\", Int64.Type}, {\"дата_время\", type datetime}, {\"id_магазина\", Int64.Type}, {\"id_товара\", Int64.Type}, {\"id_клиента\", Int64.Type}, {\"количество\", Int64.Type}, {\"цена_за_единицу\", Currency.Type}, {\"скидка_процент\", Int64.Type}, {\"сумма_строки\", Currency.Type}, {\"способ_оплаты\", type text}}, \"ru-RU\"),",
+                "    AddDate = Table.AddColumn(Types, \"Дата\", each Date.From([дата_время]), type date),",
+                "    AddCard = Table.AddColumn(AddDate, \"Карта лояльности\", each if [id_клиента] = null then \"Без карты\" else \"С картой\", type text)",
+                "in",
+                "    AddCard"
+              ],
+              "type": "m"
+            }
+          }
+        ]
+      },
+      {
+        "name": "dim_products",
+        "columns": [
+          {
+            "name": "id_товара",
+            "dataType": "int64",
+            "isHidden": true,
+            "lineageTag": "544b458d-8765-4c9a-af66-f46b08dd43b9",
+            "sourceColumn": "id_товара",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "наименование_товара",
+            "dataType": "string",
+            "lineageTag": "96c70700-edf0-4af2-b6cb-aa70121a6240",
+            "sourceColumn": "наименование_товара",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "бренд",
+            "dataType": "string",
+            "lineageTag": "a2ed7b24-a43d-40b9-813f-09ff872251da",
+            "sourceColumn": "бренд",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "категория",
+            "dataType": "string",
+            "lineageTag": "afe88a37-9bda-4898-9540-114e61847687",
+            "sourceColumn": "категория",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "подкатегория",
+            "dataType": "string",
+            "lineageTag": "668f0b3d-7e64-455a-89a4-b0e85445fe05",
+            "sourceColumn": "подкатегория",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "цена_закупки_руб",
+            "dataType": "decimal",
+            "formatString": "#,0.00",
+            "lineageTag": "71f47027-041d-4992-9e69-681b93540060",
+            "sourceColumn": "цена_закупки_руб",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "цена_розничная_руб",
+            "dataType": "decimal",
+            "formatString": "#,0.00",
+            "lineageTag": "4da2a35e-0cb1-447a-9168-cb12e9d214d8",
+            "sourceColumn": "цена_розничная_руб",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "id_поставщика",
+            "dataType": "int64",
+            "isHidden": true,
+            "lineageTag": "7fbe5986-81d6-4e2e-aa2b-1b735f6183ba",
+            "sourceColumn": "id_поставщика",
+            "summarizeBy": "none"
+          }
+        ],
+        "lineageTag": "890e01d5-96be-49a3-b3e8-7e6a0d457a78",
+        "partitions": [
+          {
+            "name": "dim_products",
+            "mode": "import",
+            "source": {
+              "expression": [
+                "let",
+                "    Source = Excel.Workbook(File.Contents(DataFile), null, true),",
+                "    Sheet = Source{[Item=\"dim_products\",Kind=\"Sheet\"]}[Data],",
+                "    Headers = Table.PromoteHeaders(Sheet, [PromoteAllScalars=true]),",
+                "    Types = Table.TransformColumnTypes(Headers, {{\"id_товара\", Int64.Type}, {\"наименование_товара\", type text}, {\"бренд\", type text}, {\"категория\", type text}, {\"подкатегория\", type text}, {\"цена_закупки_руб\", Currency.Type}, {\"цена_розничная_руб\", Currency.Type}, {\"id_поставщика\", Int64.Type}}, \"ru-RU\")",
+                "in",
+                "    Types"
+              ],
+              "type": "m"
+            }
+          }
+        ]
+      },
+      {
+        "name": "dim_stores",
+        "columns": [
+          {
+            "name": "id_магазина",
+            "dataType": "int64",
+            "isHidden": true,
+            "lineageTag": "82e123ad-4414-4ba3-b22a-a34b19090ca8",
+            "sourceColumn": "id_магазина",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "наименование_магазина",
+            "dataType": "string",
+            "lineageTag": "b18e9ca3-dc8e-46ae-84e1-db71cfc9f012",
+            "sourceColumn": "наименование_магазина",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "формат_магазина",
+            "dataType": "string",
+            "lineageTag": "7bf8605d-10e3-434e-9b61-abbef90b1393",
+            "sourceColumn": "формат_магазина",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "город",
+            "dataType": "string",
+            "lineageTag": "935bfeae-95e3-44fe-a68e-4d6c3c921c8c",
+            "sourceColumn": "город",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "регион",
+            "dataType": "string",
+            "lineageTag": "38fd5db6-2108-4869-91da-0e13b3f28558",
+            "sourceColumn": "регион",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "площадь_кв_м",
+            "dataType": "int64",
+            "lineageTag": "10bd0744-6412-4597-ad60-991580b8cded",
+            "sourceColumn": "площадь_кв_м",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "дата_открытия",
+            "dataType": "dateTime",
+            "formatString": "dd.MM.yyyy",
+            "lineageTag": "612f8339-53a1-4293-b506-0cf55f5032db",
+            "sourceColumn": "дата_открытия",
+            "summarizeBy": "none"
+          }
+        ],
+        "hierarchies": [
+          {
+            "name": "География",
+            "levels": [
+              {
+                "name": "регион",
+                "column": "регион",
+                "lineageTag": "daa0d611-03c3-4a37-b921-0680872d36d1",
+                "ordinal": 0
+              },
+              {
+                "name": "город",
+                "column": "город",
+                "lineageTag": "2104de0c-8543-40ee-96bc-8a8b1de31420",
+                "ordinal": 1
+              },
+              {
+                "name": "наименование_магазина",
+                "column": "наименование_магазина",
+                "lineageTag": "0a64dd00-f62b-4490-928f-ed132a110478",
+                "ordinal": 2
+              }
+            ],
+            "lineageTag": "29d0e6e3-e648-4d00-a064-c4086739d3fc"
+          }
+        ],
+        "lineageTag": "84eda327-00e4-43bb-8e00-e2f9c8b11ecf",
+        "partitions": [
+          {
+            "name": "dim_stores",
+            "mode": "import",
+            "source": {
+              "expression": [
+                "let",
+                "    Source = Excel.Workbook(File.Contents(DataFile), null, true),",
+                "    Sheet = Source{[Item=\"dim_stores\",Kind=\"Sheet\"]}[Data],",
+                "    Headers = Table.PromoteHeaders(Sheet, [PromoteAllScalars=true]),",
+                "    Types = Table.TransformColumnTypes(Headers, {{\"id_магазина\", Int64.Type}, {\"наименование_магазина\", type text}, {\"формат_магазина\", type text}, {\"город\", type text}, {\"регион\", type text}, {\"площадь_кв_м\", Int64.Type}, {\"дата_открытия\", type datetime}}, \"ru-RU\")",
+                "in",
+                "    Types"
+              ],
+              "type": "m"
+            }
+          }
+        ]
+      },
+      {
+        "name": "dim_customers",
+        "columns": [
+          {
+            "name": "id_клиента",
+            "dataType": "int64",
+            "isHidden": true,
+            "lineageTag": "a30ec155-ee90-42f8-98c5-af6981b42beb",
+            "sourceColumn": "id_клиента",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "фио",
+            "dataType": "string",
+            "lineageTag": "6b455037-7c37-4c15-9c48-8e592e476860",
+            "sourceColumn": "фио",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "пол",
+            "dataType": "string",
+            "lineageTag": "9d4a1210-55cd-42bb-816b-a35a39d5add7",
+            "sourceColumn": "пол",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "возраст",
+            "dataType": "int64",
+            "lineageTag": "d71ad30e-86cf-4782-ac01-309f25cd2965",
+            "sourceColumn": "возраст",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "возрастная_группа",
+            "dataType": "string",
+            "lineageTag": "f774d7cb-09e5-4e8a-a434-66efb7d5230b",
+            "sourceColumn": "возрастная_группа",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "регион_проживания",
+            "dataType": "string",
+            "lineageTag": "767d424d-9b49-4c23-86ea-88a04b24ab13",
+            "sourceColumn": "регион_проживания",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "дата_регистрации_карты",
+            "dataType": "dateTime",
+            "formatString": "dd.MM.yyyy",
+            "lineageTag": "b15b3a1b-58e4-42ea-b195-663445265ac0",
+            "sourceColumn": "дата_регистрации_карты",
+            "summarizeBy": "none"
+          }
+        ],
+        "lineageTag": "0a9ee52a-8b85-4f77-ba13-db4e5aaa562d",
+        "partitions": [
+          {
+            "name": "dim_customers",
+            "mode": "import",
+            "source": {
+              "expression": [
+                "let",
+                "    Source = Excel.Workbook(File.Contents(DataFile), null, true),",
+                "    Sheet = Source{[Item=\"dim_customers\",Kind=\"Sheet\"]}[Data],",
+                "    Headers = Table.PromoteHeaders(Sheet, [PromoteAllScalars=true]),",
+                "    Types = Table.TransformColumnTypes(Headers, {{\"id_клиента\", Int64.Type}, {\"фио\", type text}, {\"пол\", type text}, {\"возраст\", Int64.Type}, {\"возрастная_группа\", type text}, {\"регион_проживания\", type text}, {\"дата_регистрации_карты\", type datetime}}, \"ru-RU\")",
+                "in",
+                "    Types"
+              ],
+              "type": "m"
+            }
+          }
+        ]
+      },
+      {
+        "name": "dim_suppliers",
+        "columns": [
+          {
+            "name": "id_поставщика",
+            "dataType": "int64",
+            "isHidden": true,
+            "lineageTag": "5ec4ce7c-f197-4383-b656-b0a38ceddac8",
+            "sourceColumn": "id_поставщика",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "наименование_поставщика",
+            "dataType": "string",
+            "lineageTag": "3da75806-55d4-4ce5-b6f2-99048de47548",
+            "sourceColumn": "наименование_поставщика",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "город_поставщика",
+            "dataType": "string",
+            "lineageTag": "c2223b07-3bdc-40f9-8e56-9429ec87e5c9",
+            "sourceColumn": "город_поставщика",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "профиль_поставки",
+            "dataType": "string",
+            "lineageTag": "5802defb-16e2-4df0-9adf-918d5efb135b",
+            "sourceColumn": "профиль_поставки",
+            "summarizeBy": "none"
+          }
+        ],
+        "lineageTag": "fec9d3c3-ec74-4ff1-9023-283a5e794177",
+        "partitions": [
+          {
+            "name": "dim_suppliers",
+            "mode": "import",
+            "source": {
+              "expression": [
+                "let",
+                "    Source = Excel.Workbook(File.Contents(DataFile), null, true),",
+                "    Sheet = Source{[Item=\"dim_suppliers\",Kind=\"Sheet\"]}[Data],",
+                "    Headers = Table.PromoteHeaders(Sheet, [PromoteAllScalars=true]),",
+                "    Types = Table.TransformColumnTypes(Headers, {{\"id_поставщика\", Int64.Type}, {\"наименование_поставщика\", type text}, {\"город_поставщика\", type text}, {\"профиль_поставки\", type text}}, \"ru-RU\")",
+                "in",
+                "    Types"
+              ],
+              "type": "m"
+            }
+          }
+        ]
+      },
+      {
+        "name": "dim_calendar",
+        "columns": [
+          {
+            "name": "Date",
+            "dataType": "dateTime",
+            "formatString": "dd.MM.yyyy",
+            "isKey": true,
+            "isNameInferred": false,
+            "lineageTag": "e93e20e7-76ae-4ccb-83fc-07da1cd8bcb2",
+            "sourceColumn": "[Date]",
+            "summarizeBy": "none",
+            "type": "calculatedTableColumn"
+          },
+          {
+            "name": "Год",
+            "dataType": "int64",
+            "isNameInferred": false,
+            "lineageTag": "024a563f-6a9b-47bb-bc1a-b3d51b6229f4",
+            "sourceColumn": "[Год]",
+            "summarizeBy": "none",
+            "type": "calculatedTableColumn"
+          },
+          {
+            "name": "Квартал",
+            "dataType": "string",
+            "isNameInferred": false,
+            "lineageTag": "831aa4d7-7b35-4e5f-bf24-e9b1aafa7323",
+            "sourceColumn": "[Квартал]",
+            "summarizeBy": "none",
+            "type": "calculatedTableColumn"
+          },
+          {
+            "name": "Месяц",
+            "dataType": "string",
+            "isNameInferred": false,
+            "lineageTag": "ab0b80e5-40be-4955-8a92-c731f3fe4e84",
+            "sortByColumn": "Номер месяца",
+            "sourceColumn": "[Месяц]",
+            "summarizeBy": "none",
+            "type": "calculatedTableColumn"
+          },
+          {
+            "name": "Номер месяца",
+            "dataType": "int64",
+            "isHidden": true,
+            "isNameInferred": false,
+            "lineageTag": "728a60e3-89f2-4174-b6fd-b29afdc40791",
+            "sourceColumn": "[Номер месяца]",
+            "summarizeBy": "none",
+            "type": "calculatedTableColumn"
+          },
+          {
+            "name": "Год-месяц",
+            "dataType": "string",
+            "isNameInferred": false,
+            "lineageTag": "bbb149cc-6501-4111-bdab-331d3c1f8eb2",
+            "sourceColumn": "[Год-месяц]",
+            "summarizeBy": "none",
+            "type": "calculatedTableColumn"
+          }
+        ],
+        "dataCategory": "Time",
+        "lineageTag": "ddffbaa7-0278-425d-a405-d0429e6c0add",
+        "partitions": [
+          {
+            "name": "dim_calendar",
+            "mode": "import",
+            "source": {
+              "expression": "ADDCOLUMNS(CALENDAR(DATE(2024,1,1), DATE(2025,12,31)), \"Год\", YEAR([Date]), \"Квартал\", \"К\" & QUARTER([Date]), \"Месяц\", FORMAT([Date], \"mmm\", \"ru-RU\"), \"Номер месяца\", MONTH([Date]), \"Год-месяц\", FORMAT([Date], \"yyyy-MM\"))",
+              "type": "calculated"
+            }
+          }
+        ]
+      }
+    ]
+  }
+}

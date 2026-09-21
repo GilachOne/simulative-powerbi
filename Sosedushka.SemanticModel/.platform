@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "SemanticModel",
+    "displayName": "Sosedushka"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "83b49730-17e9-4767-877e-a829e340656b"
+  }
+}

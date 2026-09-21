@@ -1,0 +1,41 @@
+Выручка =
+SUM(fact_sales[сумма_строки])
+
+Количество чеков =
+DISTINCTCOUNT(fact_sales[id_чека])
+
+Средний чек =
+DIVIDE([Выручка], [Количество чеков])
+
+Количество клиентов =
+DISTINCTCOUNTNOBLANK(fact_sales[id_клиента])
+
+Средний чек по карте =
+CALCULATE([Средний чек], fact_sales[Карта лояльности] = "С картой")
+
+Средний чек без карты =
+CALCULATE([Средний чек], fact_sales[Карта лояльности] = "Без карты")
+
+Разница среднего чека % =
+DIVIDE([Средний чек по карте], [Средний чек без карты]) - 1
+
+Выручка прошлого года =
+CALCULATE([Выручка], SAMEPERIODLASTYEAR(dim_calendar[Date]))
+
+YoY % =
+VAR PY = [Выручка прошлого года] RETURN IF(HASONEVALUE(dim_calendar[Год]) && NOT ISBLANK(PY), DIVIDE([Выручка] - PY, PY))
+
+Выручка YTD =
+TOTALYTD([Выручка], dim_calendar[Date])
+
+Доля от общего =
+DIVIDE([Выручка], CALCULATE([Выручка], ALLSELECTED(dim_products)))
+
+Чеков с картой % =
+DIVIDE(CALCULATE([Количество чеков], fact_sales[Карта лояльности] = "С картой"), [Количество чеков])
+
+Выручка в день =
+DIVIDE([Выручка], COUNTROWS(dim_calendar))
+
+Рейтинг магазина =
+RANKX(ALLSELECTED(dim_stores[наименование_магазина]), [Выручка], , DESC, DENSE)
